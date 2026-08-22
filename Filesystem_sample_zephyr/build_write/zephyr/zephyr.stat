@@ -1,0 +1,201 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           RISC-V
+  Version:                           0x1
+  Entry point address:               0x80000000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          2344760 (bytes into file)
+  Flags:                             0x30001, RVC, cheriabi, capability mode
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         4
+  Size of section headers:           40 (bytes)
+  Number of section headers:         153
+  Section header string table index: 152
+There are 153 section headers, starting at offset 0x23c738:
+
+Section Headers:
+  [Nr] Name              Type            Address  Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] rom_start         PROGBITS        80000000 004000 000076 00  AX  0   0 16384
+  [ 2] reset             PROGBITS        80000078 004078 000008 00  AX  0   0  4
+  [ 3] exceptions        PROGBITS        80000080 004080 000188 00  AX  0   0  4
+  [ 4] text              PROGBITS        80000208 004208 018666 00  AX  0   0  8
+  [ 5] .got              PROGBITS        80018870 01c870 000d98 00  WA  0   0  8
+  [ 6] initlevel         PROGBITS        80019608 01d608 0000a0 00  WA  0   0  8
+  [ 7] device_area       PROGBITS        800196a8 01d6a8 0000d8 00  WA  0   0  8
+  [ 8] sw_isr_table      PROGBITS        80019780 01d780 004800 00  WA  0   0  8
+  [ 9] app_shmem_regions PROGBITS        8001df80 021f80 000000 00  WA  0   0  1
+  [10] k_p4wq_initparam_area PROGBITS    8001df80 021f80 000000 00  WA  0   0  1
+  [11] _static_thread_data_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [12] device_deps       PROGBITS        8001df80 021f80 000000 00  WA  0   0  1
+  [13] shared_irq_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [14] crypto_driver_api_area PROGBITS   8001df80 021f80 000000 00  WA  0   0  1
+  [15] adc_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [16] auxdisplay_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [17] bbram_driver_api_area PROGBITS    8001df80 021f80 000000 00  WA  0   0  1
+  [18] bt_hci_driver_api_area PROGBITS   8001df80 021f80 000000 00  WA  0   0  1
+  [19] can_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [20] cellular_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [21] charger_driver_api_area PROGBITS  8001df80 021f80 000000 00  WA  0   0  1
+  [22] clock_control_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [23] comparator_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [24] coredump_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [25] counter_driver_api_area PROGBITS  8001df80 021f80 000000 00  WA  0   0  1
+  [26] dac_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [27] dai_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [28] display_driver_api_area PROGBITS  8001df80 021f80 000000 00  WA  0   0  1
+  [29] dma_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [30] edac_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [31] eeprom_driver_api_area PROGBITS   8001df80 021f80 000000 00  WA  0   0  1
+  [32] emul_bbram_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [33] fuel_gauge_emul_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [34] emul_sensor_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [35] entropy_driver_api_area PROGBITS  8001df80 021f80 000000 00  WA  0   0  1
+  [36] espi_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [37] espi_saf_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [38] flash_driver_api_area PROGBITS    8001df80 021f80 000000 00  WA  0   0  1
+  [39] fpga_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [40] fuel_gauge_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [41] gnss_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [42] gpio_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [43] haptics_driver_api_area PROGBITS  8001df80 021f80 000000 00  WA  0   0  1
+  [44] hwspinlock_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [45] i2c_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [46] i2c_target_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [47] i2s_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [48] i3c_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [49] ipm_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [50] led_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [51] led_strip_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [52] lora_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [53] mbox_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [54] mdio_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [55] mipi_dbi_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [56] mipi_dsi_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [57] mspi_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [58] peci_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [59] ps2_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [60] ptp_clock_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [61] pwm_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [62] regulator_parent_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [63] regulator_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [64] reset_driver_api_area PROGBITS    8001df80 021f80 000000 00  WA  0   0  1
+  [65] retained_mem_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [66] rtc_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [67] sdhc_driver_api_area PROGBITS     8001df80 021f80 000000 00  WA  0   0  1
+  [68] sensor_driver_api_area PROGBITS   8001df80 021f80 000000 00  WA  0   0  1
+  [69] smbus_driver_api_area PROGBITS    8001df80 021f80 000000 00  WA  0   0  1
+  [70] spi_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [71] stepper_driver_api_area PROGBITS  8001df80 021f80 000000 00  WA  0   0  1
+  [72] syscon_driver_api_area PROGBITS   8001df80 021f80 000000 00  WA  0   0  1
+  [73] tee_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [74] video_driver_api_area PROGBITS    8001df80 021f80 000000 00  WA  0   0  1
+  [75] w1_driver_api_area PROGBITS       8001df80 021f80 000000 00  WA  0   0  1
+  [76] wdt_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [77] can_transceiver_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [78] nrf_clock_control_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [79] i3c_target_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [80] its_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [81] vtd_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [82] tgpio_driver_api_area PROGBITS    8001df80 021f80 000000 00  WA  0   0  1
+  [83] pcie_ctrl_driver_api_area PROGBITS 8001df80 021f80 000000 00  WA  0   0  1
+  [84] pcie_ep_driver_api_area PROGBITS  8001df80 021f80 000000 00  WA  0   0  1
+  [85] svc_driver_api_area PROGBITS      8001df80 021f80 000000 00  WA  0   0  1
+  [86] uart_driver_api_area PROGBITS     8001df80 021f80 000028 00  WA  0   0  8
+  [87] bc12_emul_driver_api_area PROGBITS 8001dfa8 021fa8 000000 00  WA  0   0  1
+  [88] bc12_driver_api_area PROGBITS     8001dfa8 021fa8 000000 00  WA  0   0  1
+  [89] usbc_ppc_driver_api_area PROGBITS 8001dfa8 021fa8 000000 00  WA  0   0  1
+  [90] tcpc_driver_api_area PROGBITS     8001dfa8 021fa8 000000 00  WA  0   0  1
+  [91] usbc_vbus_driver_api_area PROGBITS 8001dfa8 021fa8 000000 00  WA  0   0  1
+  [92] ivshmem_driver_api_area PROGBITS  8001dfa8 021fa8 000000 00  WA  0   0  1
+  [93] ethphy_driver_api_area PROGBITS   8001dfa8 021fa8 000000 00  WA  0   0  1
+  [94] ztest             PROGBITS        8001dfa8 021fa8 000000 00  WA  0   0  1
+  [95] init_array        PROGBITS        8001dfa8 021fa8 000000 00  WA  0   0  1
+  [96] bt_l2cap_fixed_chan_area PROGBITS 8001dfa8 021fa8 000000 00  WA  0   0  1
+  [97] bt_gatt_service_static_area PROGBITS 8001dfa8 021fa8 000000 00  WA  0   0  1
+  [98] log_strings_area  PROGBITS        8001dfa8 021fa8 000000 00  WA  0   0  1
+  [99] log_stmesp_ptr_area PROGBITS      8001dfa8 021fa8 000000 00  WA  0   0  1
+  [100] log_stmesp_str_area PROGBITS     8001dfa8 021fa8 000000 00  WA  0   0  1
+  [101] log_const_area   PROGBITS        8001dfa8 021fa8 0000a0 00  WA  0   0  8
+  [102] log_backend_area PROGBITS        8001e048 022048 000000 00  WA  0   0  1
+  [103] log_link_area    PROGBITS        8001e048 022048 000000 00  WA  0   0  1
+  [104] tracing_backend_area PROGBITS    8001e048 022048 000000 00  WA  0   0  1
+  [105] intc_table_area  PROGBITS        8001e048 022048 000018 00  WA  0   0  8
+  [106] symbol_to_keep   PROGBITS        8001e060 022060 000000 00  WA  0   0  1
+  [107] shell_area       PROGBITS        8001e060 022060 000060 00  WA  0   0  8
+  [108] shell_root_cmds_area PROGBITS    8001e0c0 0220c0 000058 00  WA  0   0  8
+  [109] shell_subcmds_area PROGBITS      8001e118 022118 000208 00  WA  0   0  8
+  [110] .last_section    PROGBITS        8001e320 022320 000004 00  WA  0   0  4
+  [111] shell_dynamic_subcmds_area PROGBITS 8001e324 022324 000000 00  WA  0   0  1
+  [112] cfb_font_area    PROGBITS        8001e324 022324 000000 00  WA  0   0  1
+  [113] rodata           PROGBITS        8001e330 022330 002f34 00 AMS  0   0 16
+  [114] __cap_relocs     PROGBITS        80021264 025264 0091dc 14   A  0   0  4
+  [115] .pad.cheri.pcc   PROGBITS        8002a440 02e440 001bc0 00   A  0   0  1
+  [116] bss              NOBITS          8002c000 030000 0241b4 00  WA  0   0 8192
+  [117] noinit           NOBITS          80050800 030000 0069e0 00  WA  0   0 2048
+  [118] datas            PROGBITS        80057200 05b200 00105c 00  WA  0   0 64
+  [119] device_states    PROGBITS        8005825c 05c25c 000006 00  WA  0   0  1
+  [120] log_mpsc_pbuf_area PROGBITS      80058262 05c262 000000 00  WA  0   0  1
+  [121] log_msg_ptr_area PROGBITS        80058262 05c262 000000 00  WA  0   0  1
+  [122] log_dynamic_area PROGBITS        80058262 05c262 000000 00  WA  0   0  1
+  [123] k_timer_area     PROGBITS        80058262 05c262 000000 00  WA  0   0  1
+  [124] k_mem_slab_area  PROGBITS        80058268 05c268 000060 00  WA  0   0  8
+  [125] k_heap_area      PROGBITS        800582c8 05c2c8 000028 00  WA  0   0  8
+  [126] k_mutex_area     PROGBITS        800582f0 05c2f0 000020 00  WA  0   0  8
+  [127] k_stack_area     PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [128] k_msgq_area      PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [129] k_mbox_area      PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [130] k_pipe_area      PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [131] k_sem_area       PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [132] k_event_area     PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [133] k_queue_area     PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [134] k_fifo_area      PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [135] k_lifo_area      PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [136] k_condvar_area   PROGBITS        80058310 05c310 000000 00  WA  0   0  1
+  [137] sys_mem_blocks_ptr_area PROGBITS 80058310 05c310 000000 00  WA  0   0  1
+  [138] net_buf_pool_area PROGBITS       80058310 05c310 000000 00  WA  0   0  1
+  [139] .last_ram_section NOBITS         80058310 05c310 000000 00  WA  0   0  1
+  [140] .comment         PROGBITS        00000000 05c310 000084 01  MS  0   0  1
+  [141] .debug_aranges   PROGBITS        00000000 05c394 0000a8 00      0   0  1
+  [142] .debug_info      PROGBITS        00000000 05c43c 06eee1 00      0   0  1
+  [143] .debug_abbrev    PROGBITS        00000000 0cb31d 00e7be 00      0   0  1
+  [144] .debug_line      PROGBITS        00000000 0d9adb 033c00 00      0   0  1
+  [145] .debug_frame     PROGBITS        00000000 10d6dc 004c20 00      0   0  4
+  [146] .debug_str       PROGBITS        00000000 1122fc 00bd30 01  MS  0   0  1
+  [147] .debug_loc       PROGBITS        00000000 11e02c 029cee 00      0   0  1
+  [148] .debug_ranges    PROGBITS        00000000 147d1a 004830 00      0   0  1
+  [149] .riscv.attributes RISCV_ATTRIBUTES 00000000 14c54a 000054 00      0   0  1
+  [150] .symtab          SYMTAB          00000000 14c5a0 0e6910 10     151 57774  4
+  [151] .strtab          STRTAB          00000000 232eb0 008d3f 00      0   0  1
+  [152] .shstrtab        STRTAB          00000000 23bbef 000b49 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  R (retain), p (processor specific)
+
+Elf file type is EXEC (Executable file)
+Entry point 0x80000000
+There are 4 program headers, starting at offset 52
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x004000 0x80000000 0x80000000 0x58310 0x58310 RWE 0x4000
+  CHERI_PCC      0x004000 0x80000000 0x80000000 0x2c000 0x2c000 R E 0x4000
+  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x0
+  ATTRIBUTES     0x14c54a 0x00000000 0x00000000 0x00054 0x00054 R   0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     rom_start reset exceptions text .got initlevel device_area sw_isr_table app_shmem_regions k_p4wq_initparam_area _static_thread_data_area device_deps shared_irq_driver_api_area crypto_driver_api_area adc_driver_api_area auxdisplay_driver_api_area bbram_driver_api_area bt_hci_driver_api_area can_driver_api_area cellular_driver_api_area charger_driver_api_area clock_control_driver_api_area comparator_driver_api_area coredump_driver_api_area counter_driver_api_area dac_driver_api_area dai_driver_api_area display_driver_api_area dma_driver_api_area edac_driver_api_area eeprom_driver_api_area emul_bbram_driver_api_area fuel_gauge_emul_driver_api_area emul_sensor_driver_api_area entropy_driver_api_area espi_driver_api_area espi_saf_driver_api_area flash_driver_api_area fpga_driver_api_area fuel_gauge_driver_api_area gnss_driver_api_area gpio_driver_api_area haptics_driver_api_area hwspinlock_driver_api_area i2c_driver_api_area i2c_target_driver_api_area i2s_driver_api_area i3c_driver_api_area ipm_driver_api_area led_driver_api_area led_strip_driver_api_area lora_driver_api_area mbox_driver_api_area mdio_driver_api_area mipi_dbi_driver_api_area mipi_dsi_driver_api_area mspi_driver_api_area peci_driver_api_area ps2_driver_api_area ptp_clock_driver_api_area pwm_driver_api_area regulator_parent_driver_api_area regulator_driver_api_area reset_driver_api_area retained_mem_driver_api_area rtc_driver_api_area sdhc_driver_api_area sensor_driver_api_area smbus_driver_api_area spi_driver_api_area stepper_driver_api_area syscon_driver_api_area tee_driver_api_area video_driver_api_area w1_driver_api_area wdt_driver_api_area can_transceiver_driver_api_area nrf_clock_control_driver_api_area i3c_target_driver_api_area its_driver_api_area vtd_driver_api_area tgpio_driver_api_area pcie_ctrl_driver_api_area pcie_ep_driver_api_area svc_driver_api_area uart_driver_api_area bc12_emul_driver_api_area bc12_driver_api_area usbc_ppc_driver_api_area tcpc_driver_api_area usbc_vbus_driver_api_area ivshmem_driver_api_area ethphy_driver_api_area ztest init_array bt_l2cap_fixed_chan_area bt_gatt_service_static_area log_strings_area log_stmesp_ptr_area log_stmesp_str_area log_const_area log_backend_area log_link_area tracing_backend_area intc_table_area symbol_to_keep shell_area shell_root_cmds_area shell_subcmds_area .last_section shell_dynamic_subcmds_area cfb_font_area rodata __cap_relocs .pad.cheri.pcc bss noinit datas device_states log_mpsc_pbuf_area log_msg_ptr_area log_dynamic_area k_timer_area k_mem_slab_area k_heap_area k_mutex_area 
+   01     rom_start reset exceptions text .got initlevel device_area sw_isr_table app_shmem_regions k_p4wq_initparam_area _static_thread_data_area device_deps shared_irq_driver_api_area crypto_driver_api_area adc_driver_api_area auxdisplay_driver_api_area bbram_driver_api_area bt_hci_driver_api_area can_driver_api_area cellular_driver_api_area charger_driver_api_area clock_control_driver_api_area comparator_driver_api_area coredump_driver_api_area counter_driver_api_area dac_driver_api_area dai_driver_api_area display_driver_api_area dma_driver_api_area edac_driver_api_area eeprom_driver_api_area emul_bbram_driver_api_area fuel_gauge_emul_driver_api_area emul_sensor_driver_api_area entropy_driver_api_area espi_driver_api_area espi_saf_driver_api_area flash_driver_api_area fpga_driver_api_area fuel_gauge_driver_api_area gnss_driver_api_area gpio_driver_api_area haptics_driver_api_area hwspinlock_driver_api_area i2c_driver_api_area i2c_target_driver_api_area i2s_driver_api_area i3c_driver_api_area ipm_driver_api_area led_driver_api_area led_strip_driver_api_area lora_driver_api_area mbox_driver_api_area mdio_driver_api_area mipi_dbi_driver_api_area mipi_dsi_driver_api_area mspi_driver_api_area peci_driver_api_area ps2_driver_api_area ptp_clock_driver_api_area pwm_driver_api_area regulator_parent_driver_api_area regulator_driver_api_area reset_driver_api_area retained_mem_driver_api_area rtc_driver_api_area sdhc_driver_api_area sensor_driver_api_area smbus_driver_api_area spi_driver_api_area stepper_driver_api_area syscon_driver_api_area tee_driver_api_area video_driver_api_area w1_driver_api_area wdt_driver_api_area can_transceiver_driver_api_area nrf_clock_control_driver_api_area i3c_target_driver_api_area its_driver_api_area vtd_driver_api_area tgpio_driver_api_area pcie_ctrl_driver_api_area pcie_ep_driver_api_area svc_driver_api_area uart_driver_api_area bc12_emul_driver_api_area bc12_driver_api_area usbc_ppc_driver_api_area tcpc_driver_api_area usbc_vbus_driver_api_area ivshmem_driver_api_area ethphy_driver_api_area ztest init_array bt_l2cap_fixed_chan_area bt_gatt_service_static_area log_strings_area log_stmesp_ptr_area log_stmesp_str_area log_const_area log_backend_area log_link_area tracing_backend_area intc_table_area symbol_to_keep shell_area shell_root_cmds_area shell_subcmds_area .last_section shell_dynamic_subcmds_area cfb_font_area rodata __cap_relocs .pad.cheri.pcc 
+   02     
+   03     .riscv.attributes 
+   None   k_stack_area k_msgq_area k_mbox_area k_pipe_area k_sem_area k_event_area k_queue_area k_fifo_area k_lifo_area k_condvar_area sys_mem_blocks_ptr_area net_buf_pool_area .last_ram_section .comment .debug_aranges .debug_info .debug_abbrev .debug_line .debug_frame .debug_str .debug_loc .debug_ranges .symtab .strtab .shstrtab 

@@ -1,0 +1,2 @@
+"fatfs":"/home/cheri/CHERI-zephyr/modules/fs/fatfs":"${ZEPHYR_FATFS_CMAKE_DIR}"
+"littlefs":"/home/cheri/modules/fs/littlefs":"${ZEPHYR_LITTLEFS_CMAKE_DIR}"

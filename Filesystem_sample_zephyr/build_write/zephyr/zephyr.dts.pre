@@ -1,0 +1,301 @@
+# 1 "/home/cheri/CHERI-zephyr/misc/empty_file.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 399 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "/home/cheri/CHERI-zephyr/boards/qemu/riscv32cheri/qemu_riscv32cheri_purecap.dts" 1
+
+
+
+/dts-v1/;
+
+# 1 "/home/cheri/CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi" 1 3
+
+
+
+
+
+
+/dts-v1/;
+
+# 1 "/home/cheri/CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi" 1 3
+# 13 "/home/cheri/CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi" 3
+/dts-v1/;
+
+/ {
+ #address-cells = < 0x01 >;
+ #size-cells = < 0x01 >;
+ compatible = "riscv-virtio";
+ model = "riscv-virtio,qemu";
+
+ flash@20000000 {
+  bank-width = < 0x04 >;
+  reg = < 0x20000000 0x2000000 0x22000000 0x2000000 >;
+  compatible = "cfi-flash";
+ };
+
+ uart0: uart@10000000 {
+  interrupts = < 0x0a 1 >;
+  interrupt-parent = < &plic >;
+  clock-frequency = < 0x384000 >;
+  reg = < 0x10000000 0x100 >;
+  compatible = "ns16550";
+  reg-shift = < 0 >;
+ };
+
+ cpus {
+  #address-cells = < 0x01 >;
+  #size-cells = < 0x00 >;
+
+  cpu@0 {
+   device_type = "cpu";
+   reg = < 0x00 >;
+   status = "okay";
+   compatible = "qemu,riscv-virt", "riscv";
+
+   hlic0: interrupt-controller {
+    compatible = "riscv,cpu-intc";
+    #address-cells = <0>;
+    #interrupt-cells = < 0x01 >;
+    interrupt-controller;
+   };
+  };
+
+  cpu@1 {
+   device_type = "cpu";
+   reg = < 0x01 >;
+   status = "okay";
+   compatible = "qemu,riscv-virt", "riscv";
+
+   hlic1: interrupt-controller {
+    compatible = "riscv,cpu-intc";
+    #address-cells = <0>;
+    #interrupt-cells = < 0x01 >;
+    interrupt-controller;
+   };
+  };
+
+  cpu@2 {
+   device_type = "cpu";
+   reg = < 0x02 >;
+   status = "okay";
+   compatible = "qemu,riscv-virt", "riscv";
+
+   hlic2: interrupt-controller {
+    compatible = "riscv,cpu-intc";
+    #address-cells = <0>;
+    #interrupt-cells = < 0x01 >;
+    interrupt-controller;
+   };
+  };
+
+  cpu@3 {
+   device_type = "cpu";
+   reg = < 0x03 >;
+   status = "okay";
+   compatible = "qemu,riscv-virt", "riscv";
+
+   hlic3: interrupt-controller {
+    compatible = "riscv,cpu-intc";
+    #address-cells = <0>;
+    #interrupt-cells = < 0x01 >;
+    interrupt-controller;
+   };
+  };
+
+  cpu@4 {
+   device_type = "cpu";
+   reg = < 0x04 >;
+   status = "okay";
+   compatible = "qemu,riscv-virt", "riscv";
+
+   hlic4: interrupt-controller {
+    compatible = "riscv,cpu-intc";
+    #address-cells = <0>;
+    #interrupt-cells = < 0x01 >;
+    interrupt-controller;
+   };
+  };
+
+  cpu@5 {
+   device_type = "cpu";
+   reg = < 0x05 >;
+   status = "okay";
+   compatible = "qemu,riscv-virt", "riscv";
+
+   hlic5: interrupt-controller {
+    compatible = "riscv,cpu-intc";
+    #address-cells = <0>;
+    #interrupt-cells = < 0x01 >;
+    interrupt-controller;
+   };
+  };
+
+  cpu@6 {
+   device_type = "cpu";
+   reg = < 0x06 >;
+   status = "okay";
+   compatible = "qemu,riscv-virt", "riscv";
+
+   hlic6: interrupt-controller {
+    compatible = "riscv,cpu-intc";
+    #address-cells = <0>;
+    #interrupt-cells = < 0x01 >;
+    interrupt-controller;
+   };
+  };
+
+  cpu@7 {
+   device_type = "cpu";
+   reg = < 0x07 >;
+   status = "okay";
+   compatible = "qemu,riscv-virt", "riscv";
+
+   hlic7: interrupt-controller {
+    compatible = "riscv,cpu-intc";
+    #address-cells = <0>;
+    #interrupt-cells = < 0x01 >;
+    interrupt-controller;
+   };
+  };
+ };
+
+ ram0: memory@80000000 {
+  device_type = "memory";
+  reg = < 0x80000000 0x10000000 >;
+ };
+
+ soc {
+  #address-cells = < 0x01 >;
+  #size-cells = < 0x01 >;
+  compatible = "simple-bus";
+  ranges;
+
+  plic: interrupt-controller@c000000 {
+   riscv,max-priority = <7>;
+   riscv,ndev = < 1024 >;
+   reg = <0x0c000000 0x04000000>;
+   interrupts-extended = <
+    &hlic0 0x0b &hlic0 0x09
+    &hlic1 0x0b &hlic1 0x09
+    &hlic2 0x0b &hlic2 0x09
+    &hlic3 0x0b &hlic3 0x09
+    &hlic4 0x0b &hlic4 0x09
+    &hlic5 0x0b &hlic5 0x09
+    &hlic6 0x0b &hlic6 0x09
+    &hlic7 0x0b &hlic7 0x09
+   >;
+   interrupt-controller;
+   compatible = "sifive,plic-1.0.0";
+   #address-cells = < 0x00 >;
+   #interrupt-cells = < 0x02 >;
+  };
+
+  clint: clint@2000000 {
+   compatible = "sifive,clint0";
+   reg = <0x2000000 0x10000>;
+   interrupts-extended = <&hlic0 0x03 &hlic0 0x07
+            &hlic1 0x03 &hlic1 0x07
+            &hlic2 0x03 &hlic2 0x07
+            &hlic3 0x03 &hlic3 0x07
+            &hlic4 0x03 &hlic4 0x07
+            &hlic5 0x03 &hlic5 0x07
+            &hlic6 0x03 &hlic6 0x07
+            &hlic7 0x03 &hlic7 0x07>;
+  };
+
+  mtimer: timer@200bff8 {
+   compatible = "riscv,machine-timer";
+   interrupts-extended = <&hlic0 7
+      &hlic1 7
+      &hlic2 7
+      &hlic3 7
+      &hlic4 7
+      &hlic5 7
+      &hlic6 7
+      &hlic7 7>;
+   reg = <0x200bff8 0x8 0x2004000 0x8>;
+   reg-names = "mtime", "mtimecmp";
+  };
+ };
+};
+# 10 "/home/cheri/CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi" 2 3
+
+/ {
+ cpus {
+  cpu@0 {
+   riscv,isa = "rv32gc";
+  };
+
+  cpu@1 {
+   riscv,isa = "rv32gc";
+  };
+
+  cpu@2 {
+   riscv,isa = "rv32gc";
+  };
+
+  cpu@3 {
+   riscv,isa = "rv32gc";
+  };
+
+  cpu@4 {
+   riscv,isa = "rv32gc";
+  };
+
+  cpu@5 {
+   riscv,isa = "rv32gc";
+  };
+
+  cpu@6 {
+   riscv,isa = "rv32gc";
+  };
+
+  cpu@7 {
+   riscv,isa = "rv32gc";
+  };
+ };
+};
+# 7 "/home/cheri/CHERI-zephyr/boards/qemu/riscv32cheri/qemu_riscv32cheri_purecap.dts" 2
+
+/ {
+ chosen {
+  zephyr,console = &uart0;
+  zephyr,shell-uart = &uart0;
+  zephyr,sram = &ram0;
+ };
+};
+
+&uart0 {
+ status = "okay";
+};
+# 2 "<built-in>" 2
+# 1 "/home/cheri/CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay" 1
+
+
+
+
+
+
+/ {
+ fstab {
+  compatible = "zephyr,fstab";
+  ffs1: ffs1 {
+   compatible = "zephyr,fstab,fatfs";
+
+   disk-access;
+   mount-point = "/RAM:";
+  };
+ };
+
+ ramdisk0 {
+  compatible = "zephyr,ram-disk";
+  disk-name = "RAM";
+  sector-size = <512>;
+  sector-count = <128>;
+ };
+};
+# 3 "<built-in>" 2
+# 1 "/home/cheri/CHERI-zephyr/misc/empty_file.c" 2
+

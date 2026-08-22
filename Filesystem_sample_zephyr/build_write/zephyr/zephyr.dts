@@ -1,0 +1,255 @@
+/dts-v1/;
+
+/* node '/' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:15 */
+/ {
+	#address-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:16 */
+	#size-cells = < 0x1 >;       /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:17 */
+	compatible = "riscv-virtio"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:18 */
+	model = "riscv-virtio,qemu"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:19 */
+
+	/* node '/flash@20000000' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:21 */
+	flash@20000000 {
+		bank-width = < 0x4 >;                                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:22 */
+		reg = < 0x20000000 0x2000000 0x22000000 0x2000000 >; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:23 */
+		compatible = "cfi-flash";                            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:24 */
+	};
+
+	/* node '/uart@10000000' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:27 */
+	uart0: uart@10000000 {
+		interrupts = < 0xa 0x1 >;       /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:28 */
+		interrupt-parent = < &plic >;   /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:29 */
+		clock-frequency = < 0x384000 >; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:30 */
+		reg = < 0x10000000 0x100 >;     /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:31 */
+		compatible = "ns16550";         /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:32 */
+		reg-shift = < 0x0 >;            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:33 */
+		status = "okay";                /* in CHERI-zephyr/boards/qemu/riscv32cheri/qemu_riscv32cheri_purecap.dts:17 */
+	};
+
+	/* node '/cpus' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:36 */
+	cpus {
+		#address-cells = < 0x1 >; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:37 */
+		#size-cells = < 0x0 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:38 */
+
+		/* node '/cpus/cpu@0' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:40 */
+		cpu@0 {
+			device_type = "cpu";            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:41 */
+			reg = < 0x0 >;                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:42 */
+			status = "okay";                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:43 */
+			compatible = "qemu,riscv-virt",
+			             "riscv";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:44 */
+			riscv,isa = "rv32gc";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi:14 */
+
+			/* node '/cpus/cpu@0/interrupt-controller' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:46 */
+			hlic0: interrupt-controller {
+				compatible = "riscv,cpu-intc"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:47 */
+				#address-cells = < 0x0 >;      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:48 */
+				#interrupt-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:49 */
+				interrupt-controller;          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:50 */
+				phandle = < 0x2 >;             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			};
+		};
+
+		/* node '/cpus/cpu@1' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:54 */
+		cpu@1 {
+			device_type = "cpu";            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:55 */
+			reg = < 0x1 >;                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:56 */
+			status = "okay";                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:57 */
+			compatible = "qemu,riscv-virt",
+			             "riscv";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:58 */
+			riscv,isa = "rv32gc";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi:18 */
+
+			/* node '/cpus/cpu@1/interrupt-controller' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:60 */
+			hlic1: interrupt-controller {
+				compatible = "riscv,cpu-intc"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:61 */
+				#address-cells = < 0x0 >;      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:62 */
+				#interrupt-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:63 */
+				interrupt-controller;          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:64 */
+				phandle = < 0x3 >;             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			};
+		};
+
+		/* node '/cpus/cpu@2' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:68 */
+		cpu@2 {
+			device_type = "cpu";            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:69 */
+			reg = < 0x2 >;                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:70 */
+			status = "okay";                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:71 */
+			compatible = "qemu,riscv-virt",
+			             "riscv";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:72 */
+			riscv,isa = "rv32gc";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi:22 */
+
+			/* node '/cpus/cpu@2/interrupt-controller' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:74 */
+			hlic2: interrupt-controller {
+				compatible = "riscv,cpu-intc"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:75 */
+				#address-cells = < 0x0 >;      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:76 */
+				#interrupt-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:77 */
+				interrupt-controller;          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:78 */
+				phandle = < 0x4 >;             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			};
+		};
+
+		/* node '/cpus/cpu@3' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:82 */
+		cpu@3 {
+			device_type = "cpu";            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:83 */
+			reg = < 0x3 >;                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:84 */
+			status = "okay";                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:85 */
+			compatible = "qemu,riscv-virt",
+			             "riscv";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:86 */
+			riscv,isa = "rv32gc";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi:26 */
+
+			/* node '/cpus/cpu@3/interrupt-controller' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:88 */
+			hlic3: interrupt-controller {
+				compatible = "riscv,cpu-intc"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:89 */
+				#address-cells = < 0x0 >;      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:90 */
+				#interrupt-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:91 */
+				interrupt-controller;          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:92 */
+				phandle = < 0x5 >;             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			};
+		};
+
+		/* node '/cpus/cpu@4' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:96 */
+		cpu@4 {
+			device_type = "cpu";            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:97 */
+			reg = < 0x4 >;                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:98 */
+			status = "okay";                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:99 */
+			compatible = "qemu,riscv-virt",
+			             "riscv";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:100 */
+			riscv,isa = "rv32gc";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi:30 */
+
+			/* node '/cpus/cpu@4/interrupt-controller' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:102 */
+			hlic4: interrupt-controller {
+				compatible = "riscv,cpu-intc"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:103 */
+				#address-cells = < 0x0 >;      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:104 */
+				#interrupt-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:105 */
+				interrupt-controller;          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:106 */
+				phandle = < 0x6 >;             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			};
+		};
+
+		/* node '/cpus/cpu@5' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:110 */
+		cpu@5 {
+			device_type = "cpu";            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:111 */
+			reg = < 0x5 >;                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:112 */
+			status = "okay";                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:113 */
+			compatible = "qemu,riscv-virt",
+			             "riscv";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:114 */
+			riscv,isa = "rv32gc";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi:34 */
+
+			/* node '/cpus/cpu@5/interrupt-controller' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:116 */
+			hlic5: interrupt-controller {
+				compatible = "riscv,cpu-intc"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:117 */
+				#address-cells = < 0x0 >;      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:118 */
+				#interrupt-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:119 */
+				interrupt-controller;          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:120 */
+				phandle = < 0x7 >;             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			};
+		};
+
+		/* node '/cpus/cpu@6' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:124 */
+		cpu@6 {
+			device_type = "cpu";            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:125 */
+			reg = < 0x6 >;                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:126 */
+			status = "okay";                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:127 */
+			compatible = "qemu,riscv-virt",
+			             "riscv";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:128 */
+			riscv,isa = "rv32gc";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi:38 */
+
+			/* node '/cpus/cpu@6/interrupt-controller' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:130 */
+			hlic6: interrupt-controller {
+				compatible = "riscv,cpu-intc"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:131 */
+				#address-cells = < 0x0 >;      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:132 */
+				#interrupt-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:133 */
+				interrupt-controller;          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:134 */
+				phandle = < 0x8 >;             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			};
+		};
+
+		/* node '/cpus/cpu@7' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:138 */
+		cpu@7 {
+			device_type = "cpu";            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:139 */
+			reg = < 0x7 >;                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:140 */
+			status = "okay";                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:141 */
+			compatible = "qemu,riscv-virt",
+			             "riscv";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:142 */
+			riscv,isa = "rv32gc";           /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv32.dtsi:42 */
+
+			/* node '/cpus/cpu@7/interrupt-controller' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:144 */
+			hlic7: interrupt-controller {
+				compatible = "riscv,cpu-intc"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:145 */
+				#address-cells = < 0x0 >;      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:146 */
+				#interrupt-cells = < 0x1 >;    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:147 */
+				interrupt-controller;          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:148 */
+				phandle = < 0x9 >;             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			};
+		};
+	};
+
+	/* node '/memory@80000000' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:153 */
+	ram0: memory@80000000 {
+		device_type = "memory";          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:154 */
+		reg = < 0x80000000 0x10000000 >; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:155 */
+	};
+
+	/* node '/soc' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:158 */
+	soc {
+		#address-cells = < 0x1 >;  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:159 */
+		#size-cells = < 0x1 >;     /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:160 */
+		compatible = "simple-bus"; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:161 */
+		ranges;                    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:162 */
+
+		/* node '/soc/interrupt-controller@c000000' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:164 */
+		plic: interrupt-controller@c000000 {
+			riscv,max-priority = < 0x7 >;                                                                                                                                                                              /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:165 */
+			riscv,ndev = < 0x400 >;                                                                                                                                                                                    /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:166 */
+			reg = < 0xc000000 0x4000000 >;                                                                                                                                                                             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:167 */
+			interrupts-extended = < &hlic0 0xb &hlic0 0x9 &hlic1 0xb &hlic1 0x9 &hlic2 0xb &hlic2 0x9 &hlic3 0xb &hlic3 0x9 &hlic4 0xb &hlic4 0x9 &hlic5 0xb &hlic5 0x9 &hlic6 0xb &hlic6 0x9 &hlic7 0xb &hlic7 0x9 >; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:168 */
+			interrupt-controller;                                                                                                                                                                                      /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:178 */
+			compatible = "sifive,plic-1.0.0";                                                                                                                                                                          /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:179 */
+			#address-cells = < 0x0 >;                                                                                                                                                                                  /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:180 */
+			#interrupt-cells = < 0x2 >;                                                                                                                                                                                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:181 */
+			phandle = < 0x1 >;                                                                                                                                                                                         /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:29 */
+		};
+
+		/* node '/soc/clint@2000000' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:184 */
+		clint: clint@2000000 {
+			compatible = "sifive,clint0";                                                                                                                                                                              /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:185 */
+			reg = < 0x2000000 0x10000 >;                                                                                                                                                                               /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:186 */
+			interrupts-extended = < &hlic0 0x3 &hlic0 0x7 &hlic1 0x3 &hlic1 0x7 &hlic2 0x3 &hlic2 0x7 &hlic3 0x3 &hlic3 0x7 &hlic4 0x3 &hlic4 0x7 &hlic5 0x3 &hlic5 0x7 &hlic6 0x3 &hlic6 0x7 &hlic7 0x3 &hlic7 0x7 >; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:187 */
+		};
+
+		/* node '/soc/timer@200bff8' defined in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:197 */
+		mtimer: timer@200bff8 {
+			compatible = "riscv,machine-timer";                                                                                /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:198 */
+			interrupts-extended = < &hlic0 0x7 &hlic1 0x7 &hlic2 0x7 &hlic3 0x7 &hlic4 0x7 &hlic5 0x7 &hlic6 0x7 &hlic7 0x7 >; /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:199 */
+			reg = < 0x200bff8 0x8 0x2004000 0x8 >;                                                                             /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:207 */
+			reg-names = "mtime",
+			            "mtimecmp";                                                                                            /* in CHERI-zephyr/dts/riscv/qemu/virt-riscv.dtsi:208 */
+		};
+	};
+
+	/* node '/chosen' defined in CHERI-zephyr/boards/qemu/riscv32cheri/qemu_riscv32cheri_purecap.dts:9 */
+	chosen {
+		zephyr,console = &uart0;    /* in CHERI-zephyr/boards/qemu/riscv32cheri/qemu_riscv32cheri_purecap.dts:10 */
+		zephyr,shell-uart = &uart0; /* in CHERI-zephyr/boards/qemu/riscv32cheri/qemu_riscv32cheri_purecap.dts:11 */
+		zephyr,sram = &ram0;        /* in CHERI-zephyr/boards/qemu/riscv32cheri/qemu_riscv32cheri_purecap.dts:12 */
+	};
+
+	/* node '/fstab' defined in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:8 */
+	fstab {
+		compatible = "zephyr,fstab"; /* in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:9 */
+
+		/* node '/fstab/ffs1' defined in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:10 */
+		ffs1: ffs1 {
+			compatible = "zephyr,fstab,fatfs"; /* in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:11 */
+			disk-access;                       /* in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:13 */
+			mount-point = "/RAM:";             /* in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:14 */
+		};
+	};
+
+	/* node '/ramdisk0' defined in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:18 */
+	ramdisk0 {
+		compatible = "zephyr,ram-disk"; /* in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:19 */
+		disk-name = "RAM";              /* in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:20 */
+		sector-size = < 0x200 >;        /* in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:21 */
+		sector-count = < 0x80 >;        /* in CHERI-zephyr/samples/fatfs_fuzz_uart/fatfs_fstab.overlay:22 */
+	};
+};
