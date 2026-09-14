@@ -1,0 +1,22 @@
+
+6,0,spandan
+7,0,spandan
+8,0,spandan
+9,0
+0,0,spandan/hello.txt,0x13
+2,0,Hello World!,20
+12,0,3
+13,0
+5,0
+4,0,0,0
+5,0
+3,0,20
+1,0
+6,0,sayak
+11,0,spandan/hello.txt,sayak/world.txt
+10,0,spandan
+15,0
+14,0
+16,0,0
+17,0,sayak/world.txt,spandan
+18,0,/RAM:/rolf,spandan
