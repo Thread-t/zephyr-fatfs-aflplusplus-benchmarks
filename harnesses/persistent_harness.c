@@ -337,15 +337,22 @@ int main() {
                     else if (__afl_area_ptr[199] < 255) __afl_area_ptr[199]++;
                 }
 
-                if (strstr(log_read_buffer, "CHERI") != NULL) {
-                    // Force respawn immediately so the next loop starts clean
-                    spawn_target();
+                if (strstr(log_read_buffer, "CHERI") != NULL && \
+                    strstr(log_read_buffer, "exception") != NULL) {
+                    // Kill vp before timeout
+                    if (child_pid > 0) {
+                        kill(child_pid, SIGKILL);
+                        waitpid(child_pid, NULL, 0);
+                    }
                     // Tell AFL++ we found a crash!
                     abort(); 
                 }
             } else {
-                // If we can't read anything, the target may have crashed or hung. Respawn.
-                spawn_target();
+                // If we can't read anything, the target may have crashed or hung.
+                if (child_pid > 0) {
+                    kill(child_pid, SIGKILL);
+                    waitpid(child_pid, NULL, 0);
+                }
                 // Sleep long enough to exceed the AFL++ execution timeout window.
                 usleep(3000000);
             }
