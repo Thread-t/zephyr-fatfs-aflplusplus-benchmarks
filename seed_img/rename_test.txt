@@ -1,0 +1,4 @@
+14,0
+0,0,oldname.txt,6
+1,0
+11,0,oldname.txt,newname.txt

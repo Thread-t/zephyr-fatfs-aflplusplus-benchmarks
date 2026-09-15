@@ -1,0 +1,4 @@
+14,0
+0,0,delme.txt,6
+1,0
+10,0,delme.txt
