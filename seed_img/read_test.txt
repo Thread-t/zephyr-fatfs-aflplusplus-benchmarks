@@ -1,5 +1,0 @@
-0,0,hello.txt,0x13
-2,0,HelloCHERI,9
-0,0,hello.txt,0x01
-3,0,9
-1,0

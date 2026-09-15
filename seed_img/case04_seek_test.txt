@@ -1,0 +1,7 @@
+14,0
+6,0,myfolder
+0,0,myfolder/data.txt,0x13
+2,0,Hello World!,12
+4,0,0,0
+5,0
+1,0

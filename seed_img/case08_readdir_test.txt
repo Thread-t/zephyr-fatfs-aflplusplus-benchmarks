@@ -1,0 +1,7 @@
+14,0
+6,0,myfolder
+0,0,myfolder/data.txt,0x13
+1,0
+7,0,myfolder
+8,0,myfolder
+9,0

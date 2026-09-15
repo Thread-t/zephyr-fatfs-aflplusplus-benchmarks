@@ -1,0 +1,5 @@
+14,0
+6,0,myfolder
+0,0,myfolder/delme.txt,0x13
+1,0
+10,0,myfolder/delme.txt

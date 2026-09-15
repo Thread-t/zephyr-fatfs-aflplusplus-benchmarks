@@ -1,4 +1,0 @@
-14,0
-0,0,statfile.txt,6
-1,0
-17,0,statfile.txt,x
